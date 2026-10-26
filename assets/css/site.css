@@ -230,7 +230,7 @@ em,.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spac
 .place .km a svg{width:11px;height:11px}
 .nb-disclaimer{font-size:12px;color:var(--mute);margin-top:18px}
 .nb-credits{margin-top:10px;font-size:12px;color:var(--mute)}
-.nb-credits summary{cursor:pointer;width:max-content;max-width:100%;transition:color .3s}
+.nb-credits summary{cursor:pointer;transition:color .3s}
 .nb-credits summary:hover{color:var(--ink-soft)}
 .nb-credits ul{list-style:none;display:grid;gap:5px;margin-top:10px}
 .nb-credits a{text-decoration:underline;text-underline-offset:2px}
@@ -291,6 +291,9 @@ form.enquiry .actions small{font-size:12px;color:var(--mute)}
 .review-btn .g{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
 .review-btn .g svg{width:15px;height:15px}
 .addr b{font-weight:400;font-size:17px;display:block;max-width:300px;line-height:1.35}
+.foot-credit{display:block;margin-top:6px;font-size:12px;opacity:.75}
+.foot-credit a{text-decoration:underline;text-underline-offset:3px}
+.foot-credit a:hover{opacity:.8}
 .legal{display:flex;gap:18px;opacity:.85}
 .legal a{text-decoration:underline;text-underline-offset:3px}
 
