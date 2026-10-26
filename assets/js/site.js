@@ -13,8 +13,8 @@ const CONFIG = {
   instagram:    "https://www.instagram.com/wooden_nest__homestay/",
   facebook:     "https://www.facebook.com/people/Wooden-Nest/61587497518499/",
   googleReview: "https://g.page/r/CSlyylPqw2SdEBE/review", // "Ask for reviews" link from Google Business Profile; empty = open the Maps listing
-  mapsQuery:    "Wooden Nest Homestay, Aruvithura, Erattupetta, Kerala 686121",
-  originForDirections: "Aruvithura, Erattupetta, Kerala 686121"
+  mapsQuery:    "Wooden Nest Homestay, Aruvithura, Erattupetta, Kerala 686122",
+  originForDirections: "Aruvithura, Erattupetta, Kerala 686122"
 };
 
 /* ============================================================ */
