@@ -28,10 +28,6 @@
 /* at-a-glance row (reuses .feature from the home page) */
 .sp-facts{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin-top:clamp(56px,7vw,96px);padding-top:44px;border-top:1px solid var(--line)}
 
-/* ---------- clickable photos ---------- */
-[data-lb],[data-lb-go]{cursor:zoom-in}
-[data-lb]:focus-visible,[data-lb-go]:focus-visible{outline:2px solid var(--wood);outline-offset:4px}
-
 /* ---------- room by room ---------- */
 .sp-rooms{background:var(--paper);border-radius:var(--radius-lg);margin:0 12px}
 .sp-rooms .sec-head{margin-bottom:0}
@@ -73,22 +69,6 @@
 /* ---------- the other stay ---------- */
 .sp-other-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:center}
 
-/* ---------- lightbox ---------- */
-.lb{position:fixed;inset:0;z-index:180;background:rgba(14,22,17,.95);color:#EDE7DA;display:grid;grid-template-rows:auto 1fr auto;gap:14px;padding:18px var(--pad) 22px;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}
-.lb.open{opacity:1;visibility:visible;transition:opacity .4s,visibility 0s} /* visible at once, so the close button can take focus */
-.lb-top{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px}
-.lb-top .lb-title{opacity:.7}
-.lb-stage{position:relative;display:flex;align-items:center;justify-content:center;gap:18px;min-height:0}
-.lb-stage figure{display:flex;flex-direction:column;align-items:center;gap:14px;min-height:0;max-height:100%}
-.lb-stage img{max-width:min(1100px,78vw);max-height:calc(100svh - 210px);width:auto;height:auto;border-radius:24px;transition:opacity .35s}
-.lb-stage figcaption{font-size:14px;opacity:.85}
-.lb .circle-btn{flex:none;width:48px;height:48px}
-.lb-thumbs{display:flex;gap:8px;justify-content:center;overflow-x:auto;padding:4px 2px}
-.lb-thumbs button{width:52px;height:64px;border-radius:14px;overflow:hidden;flex:none;opacity:.45;border:2px solid transparent;transition:opacity .3s,border-color .3s}
-.lb-thumbs button:hover{opacity:.8}
-.lb-thumbs button.on{opacity:1;border-color:#EDE7DA}
-.lb-thumbs img{width:100%;height:100%;object-fit:cover}
-
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
   .sp-hero-grid{grid-template-columns:1fr}
@@ -106,8 +86,4 @@
   .room-media.quad{padding-bottom:32px}
   .room-media.quad figure:nth-child(even){transform:translateY(32px)}
   .sp-shared-foot{justify-content:flex-start}
-  .lb-stage img{max-width:100%}
-  .lb-prev,.lb-next{position:absolute;top:calc(50% - 24px);z-index:2;opacity:.9}
-  .lb-prev{left:0}
-  .lb-next{right:0}
 }
