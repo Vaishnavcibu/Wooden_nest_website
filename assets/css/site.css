@@ -1,9 +1,8 @@
 /* ============================================================
    WOODEN NEST — shared styles for every page
    EASY EDITS: property photos live in assets/imgs/web (web-optimised
-   copies of assets/imgs). A few stock placeholders remain on the home
-   page — search "images.unsplash" in index.html. Contact details are
-   in the CONFIG block at the top of assets/js/site.js.
+   copies of assets/imgs). Contact details are in the CONFIG block at
+   the top of assets/js/site.js.
    ============================================================ */
 :root{
   --bg:#F5F2EC;
