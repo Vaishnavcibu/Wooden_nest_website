@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Wooden Nest — Homestay in Aruvithura, Erattupetta</title>
 <meta name="description" content="Wooden Nest is a forest-side homestay at Aruvithura, Erattupetta, Kerala. 3 BHK and 4 BHK stays, a stream below, a treehouse, a swing — and Vagamon, Illikkal Kallu and Ilaveezhapoonchira close by." />
+<link rel="icon" type="image/png" sizes="64x64" href="assets/imgs/web/favicon.png" />
+<link rel="apple-touch-icon" href="assets/imgs/web/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -50,6 +52,7 @@ em,.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spac
 
 /* ---------- preloader ---------- */
 .loader{position:fixed;inset:0;background:var(--forest);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#EDE7DA;gap:18px}
+.loader-logo{width:clamp(84px,11vw,120px);height:auto;border-radius:50%}
 .loader-word{font-size:clamp(42px,9vw,110px);font-weight:500;letter-spacing:-.04em;overflow:hidden;display:flex}
 .loader-word span{display:inline-block}
 .loader-word em{margin-left:.18em}
@@ -61,7 +64,7 @@ em,.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spac
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,color .4s;color:#fff}
 .nav.scrolled{background:rgba(245,242,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;color:var(--ink);border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:10px;line-height:1}
-.logo svg{width:30px;height:30px}
+.logo img{width:42px;height:42px;border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,.14)}
 .logo b{display:block;font-weight:600;letter-spacing:.08em;font-size:15px}
 .logo small{display:block;font-size:9.5px;letter-spacing:.22em;opacity:.7;margin-top:4px;text-transform:uppercase}
 .nav-links{display:flex;gap:8px}
@@ -336,6 +339,7 @@ form.enquiry .actions small{font-size:12px;color:var(--mute)}
 
 <!-- ===================== PRELOADER ===================== -->
 <div class="loader" id="loader">
+  <img class="loader-logo" src="assets/imgs/web/logo-emblem.png" alt="" width="120" height="120" />
   <div class="loader-word"><span>Wooden</span><em>Nest</em></div>
   <div class="loader-bar"><i id="loaderBar"></i></div>
   <div class="loader-count"><span id="loaderNum">0</span>%</div>
@@ -344,10 +348,7 @@ form.enquiry .actions small{font-size:12px;color:var(--mute)}
 <!-- ===================== HEADER ===================== -->
 <header class="nav" id="nav">
   <a href="#top" class="logo" aria-label="Wooden Nest home">
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 15 16 6l11 9"/><path d="M8 13v12h16V13"/>
-      <path d="M11 21c3 2.2 7 2.2 10 0M10.5 18.5c3.5 2.4 7.5 2.4 11 0M13 25v-4h6v4"/>
-    </svg>
+    <img src="assets/imgs/web/logo-emblem.png" alt="" width="42" height="42" />
     <span><b>WOODEN NEST</b><small>Aruvithura · Kerala</small></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
@@ -666,6 +667,7 @@ const CONFIG = {
 /* Nearby places — km = approximate road distance from Wooden Nest.
    cat: hill | water | heritage.  angle (deg) only positions the dot on the radar. */
 const PLACES = [
+  {name:"Aruvithura Vallyachan Mala", cat:"hill",   km:1,  angle:90,  note:"Kondoor hilltop crowned by a 167-ft cross, with wide views over Erattupetta"},
   {name:"Poonjar Palace",           cat:"heritage", km:6,  angle:200, note:"600-year-old palace of the Poonjar royal family"},
   {name:"Ayyampara Hills",          cat:"hill",     km:11, angle:60,  note:"Rocky hilltop with sweeping valley views at sunset"},
   {name:"Aruvikkachal Waterfalls",  cat:"water",    km:14, angle:165, note:"Tallest waterfall in Kottayam district, near Pathampuzha"},
@@ -673,8 +675,6 @@ const PLACES = [
   {name:"Kattikkayam Waterfalls",   cat:"water",    km:18, angle:20,  note:"Wild cascade below Illikkal Kallu — trek down with care"},
   {name:"Illikkal Kallu",           cat:"hill",     km:20, angle:40,  note:"Iconic rock peak at ~3,500 ft, wrapped in mist"},
   {name:"Ilaveezhapoonchira",       cat:"hill",     km:21, angle:330, note:"'Valley where leaves don't fall' — famed for sunrise"},
-  {name:"Vellichamala",             cat:"hill",     km:null, angle:290, note:"Scenic hill viewpoint — ask us for the best route"},
-  {name:"Anoolikkichal Waterfalls", cat:"water",    km:null, angle:240, note:"Forest waterfall — ask us for the best route"},
   {name:"Vagamon Meadows",          cat:"hill",     km:25, angle:80,  note:"Rolling grasslands, tea gardens and cool air"},
   {name:"Kurisumala, Vagamon",      cat:"heritage", km:28, angle:95,  note:"Pilgrim hilltop with a panoramic walk"},
   {name:"Vagamon Pine Forest",      cat:"hill",     km:30, angle:120, note:"Tall pines, soft light and photo spots"}
@@ -798,11 +798,11 @@ function buildRadar(){
   h+=`<path class="sweep" d="M250 250 L250 35 A215 215 0 0 1 402 98 Z" fill="url(#sw)"/>`;
   [10,20,30].forEach(k=>{const r=k/R_MAX*RAD;h+=`<circle class="ring" cx="${CX}" cy="${CY}" r="${r}"/><text class="ring-label" x="${CX+4}" y="${CY-r-5}">${k} km</text>`});
   PLACES.forEach((p,i)=>{
-    const km=p.km??33;const r=Math.min(km,R_MAX)/R_MAX*RAD;const a=(p.angle-90)*Math.PI/180;
+    const km=p.km??33;const r=Math.max(28,Math.min(km,R_MAX)/R_MAX*RAD);const a=(p.angle-90)*Math.PI/180; // keep very near places clear of the home marker
     const x=CX+r*Math.cos(a),y=CY+r*Math.sin(a);const right=x<CX+40;
     h+=`<g class="pt" data-i="${i}" data-cat="${p.cat}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
       <circle class="h" r="11"/><circle class="d" r="5"/>
-      <text x="${right?10:-10}" y="4" text-anchor="${right?"start":"end"}">${p.name.replace(/ Waterfalls| Hills|, Vagamon/,"")}</text></g>`;
+      <text x="${right?10:-10}" y="4" text-anchor="${right?"start":"end"}">${p.name.replace(/ Waterfalls| Hills|, Vagamon|^Aruvithura /,"")}</text></g>`;
   });
   h+=`<g class="home"><circle cx="${CX}" cy="${CY}" r="16" opacity=".15"/><circle cx="${CX}" cy="${CY}" r="7"/><text x="${CX}" y="${CY+30}" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#23332A;font-family:var(--sans)">Wooden Nest</text></g>`;
   s.innerHTML=h;
@@ -886,9 +886,10 @@ function runLoaderThenIntro(){
   if(!hasGSAP||reduce){loader.remove();return startPage()}
   const o={v:0};
   const tl=gsap.timeline();
-  tl.from(".loader-word span, .loader-word em",{yPercent:110,duration:.9,stagger:.12,ease:"power4.out"})
+  tl.from(".loader-logo",{scale:.6,opacity:0,duration:.8,ease:"back.out(1.6)"})
+    .from(".loader-word span, .loader-word em",{yPercent:110,duration:.9,stagger:.12,ease:"power4.out"},"<.15")
     .to(o,{v:100,duration:1.4,ease:"power2.inOut",onUpdate:()=>{$("#loaderNum").textContent=Math.round(o.v);$("#loaderBar").style.transform=`scaleX(${o.v/100})`}},"<")
-    .to(".loader-word, .loader-count, .loader-bar",{y:-30,opacity:0,duration:.5,ease:"power2.in"})
+    .to(".loader-logo, .loader-word, .loader-count, .loader-bar",{y:-30,opacity:0,duration:.5,ease:"power2.in"})
     .to(loader,{clipPath:"inset(0 0 100% 0)",duration:.9,ease:"power4.inOut",onComplete:()=>{loader.remove();}} ,"-=.1")
     .add(startPage,"-=.55");
 }
